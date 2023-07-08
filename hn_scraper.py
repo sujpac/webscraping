@@ -5,11 +5,18 @@ import json
 scraping_hn = True
 page = 1
 output = []
+headers = {
+    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) " \
+    "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
+}
 
 print("Starting Hacker News Scraper...")
 
 while scraping_hn:
-    response = requests.get(f"https://news.ycombinator.com/?p={page}")
+    response = requests.get(
+        f"https://news.ycombinator.com/?p={page}",
+        headers=headers
+    )
     html = response.text
 
     print(f"Scraping {response.url}")
