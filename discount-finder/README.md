@@ -1,3 +1,15 @@
+# Installation
+
+`npm i dotenv express cors nodemon`
+
+`echo "USERNAME=username\nPASSWORD=password" > .env`
+
+`npm run start:backend`
+
+# Output
+
+![Screenshot](/discount-finder/public/screenshot.png?raw=true "Screenshot")
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

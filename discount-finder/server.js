@@ -1,8 +1,9 @@
 const PORT = 8000
 const express = require("express")
 const cors = require("cors")
-const app = express()
+require("dotenv").config()
 
+const app = express()
 app.use(cors())
 
 const username = process.env.USERNAME
@@ -26,7 +27,16 @@ app.get("/deals", async (req, res) => {
             },
         })
 
-        console.log(await response.json())
+        const data = await response.json()
+        const results = data.results[0].content.results.organic
+        const filteredDeals = results.filter((deal) => deal.price_strikethrough)
+        const sortedByBestDeal = filteredDeals.sort(
+            (b, a) =>
+                ((a.price_strikethrough - a.price) / a.price_strikethrough) * 100 -
+                ((b.price_strikethrough - b.price) / b.price_strikethrough) * 100
+        )
+
+        res.send(sortedByBestDeal)
     } catch (err) {
         console.error(err)
     }
