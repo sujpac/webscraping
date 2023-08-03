@@ -1,4 +1,4 @@
-import logo from "../images/discountfinder.png"
+import logo from "../images/discountfinder.jpeg"
 
 const Header = () => {
     const today = new Date().toString().slice(0, 10)

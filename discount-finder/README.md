@@ -8,7 +8,7 @@
 
 # Output
 
-![Screenshot](/discount-finder/public/screenshot.png?raw=true "Screenshot")
+![Screenshot](/discount-finder/public/screenshot.jpeg?raw=true "Screenshot")
 
 # Getting Started with Create React App
 
